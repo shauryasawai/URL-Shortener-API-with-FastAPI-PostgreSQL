@@ -117,4 +117,53 @@ To deactivate the virtual environment, simply run:
 deactivate
 ```
 ---
+## 📁 Project Structure
+
+```bash
+urlshortener/
+│
+├── base/               # Main app
+│   ├── migrations/
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   ├── serializers.py
+│
+├── PROJECT/            # Project settings
+│   ├── settings.py
+│   ├── urls.py
+│
+├── manage.py
+└── README.md
+```
+---
+## 📬 API Endpoints
+# 🔹 POST /shorten/
+
+Request:
+```bash
+{
+  "original_url": "https://shauryasawai.github.io/MY-WEB/"
+}
+```
+Response:
+```bash
+{
+  "short_url": "http://127.0.0.1:8000/yXcPNQ"
+}
+```
+---
+
+## 📃 Notes
+
+- The short codes are randomly generated and unique.
+
+- A production deployment can include NGINX, Docker, and Redis for performance.
+
+---
+### 🧑‍💻 Author
+
+## Shauryaman Sawai
+## NIT Rourkela
+## Full Stack Developer | ML & Analytics Enthusiast
 
