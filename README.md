@@ -18,7 +18,7 @@ It allows users to:
 - **Backend**: Django + Django REST Framework
 - **Database**: PostgreSQL
 - **Language**: Python 3.x
-- **Tools**: curl/Postman for testing
+- **Tools**: Postman for testing
 
 ---
 
@@ -91,15 +91,38 @@ pip install -r requirements.txt
 
 This will install all the dependencies listed in the `full-requirements.txt` file.
 
-### Step 6: Run Migrations
+### Step 6: Set Up PostgreSQL Database
+
+Make sure you have PostgreSQL running. Create a database:
+
+```bash
+CREATE DATABASE urlshortener;
+```
+Then update DATABASES in PROJECT/settings.py:
+```bash
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'urlshortener',
+        'USER': 'your_username',
+        'PASSWORD': 'your_password',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+```
+
+
+### Step 7: Run Migrations
 
 Apply the database migrations:
 
 ```bash
+python manage.py makemigrations
 python manage.py migrate
 ```
 
-### Step 7: Start the Development Server
+### Step 8: Start the Development Server
 
 Run the development server to start the application:
 
